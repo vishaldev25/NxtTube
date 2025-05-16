@@ -4,7 +4,8 @@ import Login from "./Login.jsx"
 import SavedVideos from "./SavedVideos.jsx"
 import Trending from "./Trending.jsx"
 import VideoItemDetails from "./VideoItemDetails"
+import NotFound from "./NotFound.jsx"
 
 export {
-    Home, Trending, Gaming, Login, SavedVideos, VideoItemDetails
+    Home, Trending, Gaming, Login, SavedVideos, VideoItemDetails, NotFound
 }
