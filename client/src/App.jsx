@@ -3,9 +3,12 @@ import { BrowserRouter, Link, Routes, Route, Navigate } from "react-router-dom"
 import {
   Home, Gaming, SavedVideos, VideoItemDetails,
   Login, Trending, NotFound
- } from "./pages"
+} from "./pages"
+ 
+
 const App = () =>
 {
+  
   return (
     <BrowserRouter>
         <Routes>
