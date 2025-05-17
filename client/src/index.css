@@ -66,6 +66,35 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+  font-family: "Inter", sans-serif, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  margin: auto;
+}
+
+@layer components{
+  nav{
+    @apply bg-white shadow-md dark:bg-[#1e293b] dark:text-[#f9f9f9]
+  }
+}
+@layer utilities{
+  .button-logout{
+    @apply dark:bg-transparent 
+  }
+}
