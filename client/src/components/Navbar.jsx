@@ -70,7 +70,7 @@ const Navbar = () => {
                             <Link to={path}>
                               <div
                                 className={`flex items-center space-x-3 px-6 py-3 rounded-md transition-colors ${
-                                isActive ? 'bg-red-100 text-red-600 font-semibold' : 'dark:text-[#f1f5f9] font-semibold hover:bg-gray-100'}
+                                isActive ? 'bg-red-100 text-red-600 font-semibold' : 'dark:text-[#f1f5f9] font-semibold '}
                                 `}
                               >
                                 <Icon size="25" className={`text-xl mr-4 ${isActive ? 'text-red-500' : ''}`} />
