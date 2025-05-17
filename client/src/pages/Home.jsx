@@ -1,10 +1,14 @@
-import { Navbar } from "../components"
+import { Navbar , Sidebar} from "../components"
 const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      HOme
-    </div>
+      <div className="flex">
+        <Sidebar />
+        HOme
+      </div>
+      
+    </>
   )
 }
 
