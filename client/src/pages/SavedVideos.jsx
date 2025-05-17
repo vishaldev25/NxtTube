@@ -1,10 +1,13 @@
-import React from 'react'
+import { Navbar } from "../components"
 
 const SavedVideos = () => {
   return (
-    <div>
-      SavedVideos
+    <>
+      <Navbar />
+      <div>
+      Saved videos
     </div>
+    </>
   )
 }
 

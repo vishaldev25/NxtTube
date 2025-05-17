@@ -1,10 +1,13 @@
-import React from 'react'
+import { Navbar } from "../components"
 
 const NotFound = () => {
   return (
-    <div>
-      NotFound
+    <>
+      <Navbar />
+      <div>
+      NOt found
     </div>
+    </>
   )
 }
 

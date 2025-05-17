@@ -1,10 +1,14 @@
-import React from 'react'
+import { Navbar } from "../components"
 
 const Gaming = () => {
   return (
-    <div>
+    <>
+      <Navbar />
+      <div>
       Gaming
     </div>
+    </>
+    
   )
 }
 

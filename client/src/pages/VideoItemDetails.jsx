@@ -1,9 +1,12 @@
-
+import { Navbar } from "../components"
 const VideoItemDetails = () => {
   return (
-    <div>
+    <>
+      <Navbar />
+      <div>
       VideoItemDetails
     </div>
+    </>
   )
 }
 
