@@ -64,7 +64,7 @@ const Login = () => {
   }
 
   const onSubmitSuccess = (jwtToken) => {
-    Cookies.set('jwt_token', jwtToken, { expires: import.meta.env.vITE_JWT_EXPIRES })
+    Cookies.set('jwt_token', jwtToken, { expires: import.meta.env.VITE_JWT_EXPIRES })
     navigate("/")
     setErrorMsg("")
     setShowErrorMsg(false)
