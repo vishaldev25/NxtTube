@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { nxtwatch_logo_dark, nxtwatch_logo_light } from "../assets"
 import { useTheme } from "../context/ThemeContext"
 import Cookies from 'js-cookie'
 import { useNavigate } from "react-router-dom"
 
 const Login = () => {
+  const token = Cookies.get("jwt_token");
   const { darkMode } = useTheme();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -13,6 +14,12 @@ const Login = () => {
   const [showErrorMsg, setShowErrorMsg] = useState(false);
   const navigate = useNavigate();
 
+  // code to redirect to home page if user is already authenticated
+  useEffect(() => {
+    if (token) {
+      navigate("/")
+    }
+  }, [token, navigate])
   
   const logoSrc = darkMode ? nxtwatch_logo_dark : nxtwatch_logo_light;
   
