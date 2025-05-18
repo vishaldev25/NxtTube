@@ -6,11 +6,14 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import { useTheme } from "../context/ThemeContext"
 import Popup from "reactjs-popup"
 import { IoMdClose } from 'react-icons/io'
+import Cookies from "js-cookie"
+import { useNavigate } from "react-router-dom"
 
 const Navbar = () => {
   const { darkMode, toggleTheme } = useTheme();
   const location = useLocation();
   const currentPath = location.pathname;
+  const navigate = useNavigate();
   
   const navItems = [
     { label: "Home", icon: FaHome, path: "/" },
@@ -22,7 +25,13 @@ const Navbar = () => {
   const darkIcon = darkMode ? <FaSun size="20" color="#ffffff" /> : <FaMoon size="20" />
   const logoSrc = darkMode ? nxtwatch_logo_dark : nxtwatch_logo_light
   const hambergerMenu = darkMode ? <GiHamburgerMenu className="pt-2" size="30" color="#ffffff" /> : <GiHamburgerMenu className="pt-2" size="30" />
-  const closeMark = darkMode ? <IoMdClose size="25" color="#ffffff"  />: <IoMdClose size="25"  />
+  const closeMark = darkMode ? <IoMdClose size="25" color="#ffffff" /> : <IoMdClose size="25" />
+  
+  // useNavigate --> for redirecting to the specific page
+  const onClickLogout = () => {
+    Cookies.remove("jwt_token");
+    navigate("/login"); // redirects to the login page
+  }
   return (
       <nav className="flex items-center justify-between p-4">
           <Link to="/">
@@ -102,8 +111,19 @@ const Navbar = () => {
                 <div className="p-5 block md:hidden rounded shadow-md bg-[#f1f5f9] dark:bg-[#231f20] dark:text-white">
                   <h2 className="pb-4 text-[#00306e] font-semibold font-serif text-md dark:text-white">Are you sure you want to Logout?</h2>
                   <div className="flex items-center justify-evenly">
-                    <button className="px-4 py-2 rounded border dark:text-[#cbd5e1] shadow-md border-[#383838] dark:border-[#cbd5e1] text-[#424242] font-normal">Cancel</button>
-                    <button className="bg-[#3b82f6] font-normal text-white px-4 py-2 rounded shadow-md">Confirm</button>
+                    <button
+                      onClick={()=> close()}
+                      className="px-4 py-2 rounded border dark:text-[#cbd5e1] shadow-md border-[#383838] dark:border-[#cbd5e1] text-[#424242] font-normal"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="button"
+                      onClick={onClickLogout}
+                      className="bg-[#3b82f6] font-normal text-white px-4 py-2 rounded shadow-md"
+                    >
+                      Confirm
+                    </button>
                   </div>
                 </div>
               )}
@@ -124,8 +144,20 @@ const Navbar = () => {
                 <div className="p-8  sm:hidden md:flex flex-col  justify-center rounded shadow-md bg-[#f1f5f9] dark:bg-[#231f20] dark:text-white">
                   <h2 className="pb-4 text-[#00306e] font-semibold font-serif text-md dark:text-white">Are you sure you want to Logout?</h2>
                   <div className="flex items-center justify-evenly">
-                    <button className="px-4 py-2 rounded border dark:text-[#cbd5e1] shadow-md border-[#383838] dark:border-[#cbd5e1] text-[#424242] font-normal">Cancel</button>
-                    <button className="bg-[#3b82f6] font-normal text-white px-4 py-2 rounded shadow-md">Confirm</button>
+                    <button
+                      type="button"
+                      onClick={()=> close()}
+                      className="px-4 py-2 rounded border dark:text-[#cbd5e1] shadow-md border-[#383838] dark:border-[#cbd5e1] text-[#424242] font-normal"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="button"
+                      onClick={onClickLogout}
+                      className="bg-[#3b82f6] font-normal text-white px-4 py-2 rounded shadow-md"
+                    >
+                      Confirm
+                    </button>
                   </div>
                 </div>
               )}
