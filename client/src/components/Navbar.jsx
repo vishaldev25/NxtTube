@@ -89,9 +89,32 @@ const Navbar = () => {
           
             </li>
         <li className="mr-4">
-          <button className="block md:hidden ">
-            <FiLogOut size="20" className="font-extrabold" />
-          </button>
+          {/*POPUP for small devices */}
+          <div className="block md:hidden">
+            <Popup
+              modal
+              trigger={
+                <button className="block md:hidden ">
+                  <FiLogOut size="20" className="font-extrabold" />
+                </button>
+              }
+            >
+              {(close) => (
+                <div className="p-5 block md:hidden rounded shadow-md bg-[#f1f5f9] dark:bg-[#231f20] dark:text-white">
+                  <h2 className="pb-4 text-[#00306e] font-semibold font-serif text-md dark:text-white">Are you sure you want to Logout?</h2>
+                  <div className="flex items-center justify-evenly">
+                    <button className="px-4 py-2 rounded border dark:text-[#cbd5e1] shadow-md border-[#383838] dark:border-[#cbd5e1] text-[#424242] font-normal">Cancel</button>
+                    <button className="bg-[#3b82f6] font-normal text-white px-4 py-2 rounded shadow-md">Confirm</button>
+                  </div>
+                </div>
+              )}
+            </Popup>
+          </div>
+          
+          {/* Popup for desktop*/}
+          <div>
+
+          </div>
           <button className="hidden md:inline-block px-4 py-1 text-sm font-serif font-semibold rounded shadow-md dark:bg-transparent text-[#4f46e5] border-2 border-[#4f46e5] dark:text-white dark:border-white">
             Logout
           </button>
