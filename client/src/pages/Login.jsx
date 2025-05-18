@@ -64,7 +64,7 @@ const Login = () => {
   }
 
   const onSubmitSuccess = (jwtToken) => {
-    Cookies.set('jwt_token', jwtToken, { expires: import.meta.env.VITE_JWT_EXPIRES })
+    Cookies.set('jwt_token', jwtToken, { expires: Number(import.meta.env.VITE_JWT_EXPIRES) || 7 })
     navigate("/")
     setErrorMsg("")
     setShowErrorMsg(false)
@@ -84,7 +84,7 @@ const Login = () => {
       body: JSON.stringify(userDetails),
     }
 
-    const response = await fetch(url, options); 
+    const response = await fetch(url, options);
     const data = await response.json();
 
     if (response.ok === true) {
