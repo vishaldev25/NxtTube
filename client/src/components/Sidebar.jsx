@@ -22,7 +22,7 @@ const Sidebar = () => {
     
 
   return (
-    <div className='dark:bg-[#231f20]  dark:text-white hidden w-full min-h-screen p-5 shadow-lg md:flex md:w-1/4 lg:w-1/5  flex-col justify-between'>
+    <div className='dark:bg-[#231f20] top-16 fixed  justify-between left-0  z-20  dark:text-white hidden  p-5 shadow-lg md:flex w-[250px] h-[calc(100vh-3.5rem)]  flex-col '>
         <ul>
             {navItems.map(({ label,icon:Icon,  path}) => {
                         const isActive = currentPath === path;
