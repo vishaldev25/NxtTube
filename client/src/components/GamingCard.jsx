@@ -12,7 +12,7 @@ const GamingCard = ({videoDetails}) => {
         />
         <div className="p-1 mt-2">
           <p className="font-semibold text-base mb-1 text-[20px] md:text-lg text-[#313131] dark:text-[#d7dfe9]">{title}</p>
-          <p className="text-[#313131] dark:text-[#d7dfe9] text-md">{ viewCount} watching worldwide</p>
+          <p className="text-[#313131] dark:text-[#d7dfe9] text-md items-center"><span className="font-bold text-red-600">{ viewCount}</span> watching worldwide</p>
         </div>
       </Link>
     </li>
