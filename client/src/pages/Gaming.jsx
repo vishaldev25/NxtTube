@@ -49,7 +49,7 @@ const Gaming = () => {
   return (
     <>
       <Navbar />
-      <div className="flex w-full h-min-screen">
+      <div className="flex w-full pt-16 h-min-screen">
         <Sidebar />
         <div className="dark:bg-[#0f0f0f] flex-1 dark:text-white bg-[#f9f9f9]">
           {apiStatus === apiStatusConstants.inProgress && (
@@ -59,7 +59,7 @@ const Gaming = () => {
           )}
           {
             apiStatus === apiStatusConstants.success && (
-              <ul>
+              <ul className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {gamingVideosList.map(video => {
                   return <GamingCard key={video.id} videoDetails={video} />
                 })}
