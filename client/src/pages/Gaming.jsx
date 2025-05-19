@@ -49,11 +49,11 @@ const Gaming = () => {
   return (
     <>
       <Navbar />
-      <div className="flex w-full h-screen">
+      <div className="flex w-full h-min-screen">
         <Sidebar />
         <div className="dark:bg-[#0f0f0f] flex-1 dark:text-white bg-[#f9f9f9]">
           {apiStatus === apiStatusConstants.inProgress && (
-            <div className="flex items-center justify-center h-full">
+            <div className="flex items-center justify-center w-full min-h-screen">
               <TailSpin color="#00BFFF" height={30} width={30} />
             </div>
           )}
@@ -68,7 +68,7 @@ const Gaming = () => {
           }
           {
             apiStatus === apiStatusConstants.failure && (
-                <FailureView />
+                <FailureView onRetry ={getGamingVideos} />
             )
           }
         </div>
