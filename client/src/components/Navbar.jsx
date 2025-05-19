@@ -33,7 +33,7 @@ const Navbar = () => {
     navigate("/login"); // redirects to the login page
   }
   return (
-      <nav className="flex items-center justify-between p-4">
+      <nav className="fixed top-0 left-0 z-50 flex items-center justify-between w-full p-4">
           <Link to="/">
               <img
                   src={logoSrc}
