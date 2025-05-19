@@ -4,10 +4,12 @@ const SavedVideos = () => {
   return (
     <>
       <Navbar />
-      <Sidebar />
-      <div>
-      Saved videos
-    </div>
+      <div className="flex w-full pt-16 h-min-screen">
+        <Sidebar />
+        <div className="dark:bg-[#0f0f0f] ml-0 md:ml-[250px] flex-1 min-h-screen p-4 dark:text-white bg-[#f9f9f9]">
+          Saved Videos
+        </div>
+      </div>
     </>
   )
 }

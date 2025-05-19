@@ -51,7 +51,7 @@ const Gaming = () => {
       <Navbar />
       <div className="flex w-full pt-16 h-min-screen">
         <Sidebar />
-        <div className="dark:bg-[#0f0f0f] flex-1 dark:text-white bg-[#f9f9f9]">
+        <div className="dark:bg-[#0f0f0f] ml-0 md:ml-[250px] flex-1 min-h-screen p-4 dark:text-white bg-[#f9f9f9]">
           {apiStatus === apiStatusConstants.inProgress && (
             <div className="flex items-center justify-center w-full min-h-screen">
               <TailSpin color="#00BFFF" height={30} width={30} />
