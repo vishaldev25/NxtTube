@@ -12,7 +12,7 @@ const TrendingCard = ({ videoDetails }) => {
         <Link to={`/videos/${id}`}>
             <img
                 src={thumbnailUrl}
-                alt="thumbnail"    
+                alt="thumbnail"     
                 className="object-cover w-full h-48 sm:h-56 md:h-64 lg:h-48"
             />
           </Link>
