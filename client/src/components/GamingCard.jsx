@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const GamingCard = ({videoDetails}) => {
   const {id, thumbnailUrl, title, viewCount} = videoDetails
   return (
-    <li className="flex justify-center gap-2 p-2 m-2 transition rounded shadow hover:shadow-lg">
+    <li className="flex flex-col items-center w-full max-w-sm gap-2 p-2 m-2 transition-transform duration-300 transform hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-xl rounded shadow">
       <Link to={`/videos/${id}`}>
         <img 
           src={thumbnailUrl}
