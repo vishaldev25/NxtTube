@@ -66,8 +66,10 @@ const Home = () => {
         <Sidebar />
         <div className="dark:bg-[#0f0f0f] ml-0 md:ml-[250px] flex-1 min-h-screen p-4 dark:text-white bg-[#f9f9f9]">
           {!bannerClosed && <HomeBanner onClose={()=> setBannerClosed(true)} />}
+          <div className="px-4 mt-2 mb-2">
+            <SearchHome searchItem={searchItem} setSearchItem={setSearchItem} />
+          </div>
           
-          <SearchHome searchItem={searchItem} setSearchItem={setSearchItem} />
           {apiStatus === apiConstantsStatus.inProgress && (
             <div className="flex items-center justify-center w-full min-h-screen">
               <TailSpin color="#00BFFF" height={30} width={30} />
