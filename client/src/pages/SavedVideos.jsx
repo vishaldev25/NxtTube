@@ -14,11 +14,11 @@ const SavedVideos = () => {
           {savedVideos.length === 0 ? (
          <NoSavedVideosCard />
       ) : (
-        <div className="">
+        <ul className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
           {savedVideos.map((video) => (
             <HomeCard key={video.videoUrl} videoDetails={video} />
           ))}
-        </div>
+        </ul>
       )}
         </div>
       </div>
