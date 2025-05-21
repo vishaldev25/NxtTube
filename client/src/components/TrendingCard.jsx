@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const TrendingCard = ({ videoDetails }) => {
+const TrendingCard = ({ videoDetails }) => { 
     const {
         id, title, thumbnailUrl, viewCount, publishedAt,
         name, imageUrl
