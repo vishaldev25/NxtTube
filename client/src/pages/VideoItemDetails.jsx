@@ -33,8 +33,7 @@ const VideoItemDetails = () => {
 
     const response = await fetch(url, options);
     const data = await response.json()
-    
-    console.log(data);
+  
     
     if (response.ok === true) {
       const videoList = data.video_details
@@ -69,7 +68,7 @@ const VideoItemDetails = () => {
   return (
     <>
       <Navbar />
-      <div className="flex w-full pt-16 h-min-screen">
+      <div className="flex flex-row min-h-screen pt-16">
         <Sidebar />
         <div className="dark:bg-[#0f0f0f] ml-0 md:ml-[250px] flex-1 min-h-screen p-4 dark:text-white bg-[#f9f9f9]">
           {apiStatus === apiStatusConstants.inProgress && (
@@ -79,7 +78,10 @@ const VideoItemDetails = () => {
           )}
           {
             apiStatus === apiStatusConstants.success && (
-              <VideoItemDetailsCard key={videoItemDetails.id} videoDetails={videoItemDetails} />
+              <>
+                  <VideoItemDetailsCard key={videoItemDetails.id} videoDetails={videoItemDetails} />
+              </>
+              
             )
           }
           {

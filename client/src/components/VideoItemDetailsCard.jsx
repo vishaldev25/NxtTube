@@ -1,4 +1,7 @@
+import { useState } from "react"
 import ReactPlayer from "react-player"
+import {AiOutlineLike, AiOutlineDislike} from 'react-icons/ai'
+import {FaSave} from 'react-icons/fa'
 
 const VideoItemDetailsCard = ({ videoDetails }) => {
     const {
@@ -6,9 +9,36 @@ const VideoItemDetailsCard = ({ videoDetails }) => {
      } = videoDetails
     
     const formatedDate = publishedAt.replace(/^(over|about|almost)\s/, '')
+
+    const [isLiked, setIsLiked] = useState(false);
+    const [isUnliked, setIsUnliked] = useState(false);
+    const [isSaved, setIsSaved] = useState(false);
+    
+    const like = isLiked ? "Liked" : "Like";
+    const unlike = isUnliked ? "Disliked" : "Dislike";
+    const saved = isSaved ? "Saved" : "Save"
+    
+    const handleLike = () => {
+        setIsLiked((prev) => !prev);
+        if(!isLiked && isUnliked) setIsUnliked(false)
+    }
+    
+    const handleDislike = () => {
+        setIsUnliked((prev) => !prev)
+        if (!isUnliked && isLiked) setIsLiked(false)
+    }
+
+    const handleSave = () => {
+        setIsSaved((prev)=>!prev)
+    }
   return (
-    <div className="p-4">
-          <ReactPlayer url={videoUrl} controls />
+      <div className="min-h-screen">
+          <div className="">
+              <ReactPlayer 
+                url={videoUrl} controls 
+              />
+          </div>
+          
           <h2>{title}</h2>
 
           <div className="flex gap-4">
@@ -17,9 +47,36 @@ const VideoItemDetailsCard = ({ videoDetails }) => {
           </div>
 
           <div className="flex gap-4">
-              <p>Like</p>
-              <p>Dislike</p>
-              <p>Save</p>
+              <div>
+                  <button
+                      onClick={handleLike}
+                  >
+                      <span className="flex">
+                          <AiOutlineLike />
+                          {like}
+                      </span>
+                        
+                  </button>
+              </div>
+            
+              <div>
+                  <button onClick={handleDislike}>
+                      <span className="flex">
+                          <AiOutlineDislike />
+                          {unlike}
+                      </span>
+                      
+                  </button>
+              </div>
+
+              <div>
+                  <button onClick={handleSave} >
+                      <span className="flex">
+                          <FaSave />
+                          {saved}
+                      </span>
+                  </button>
+              </div>
           </div>
           <hr className="text-red-500 border-t" />
 
