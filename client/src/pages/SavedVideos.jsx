@@ -1,5 +1,6 @@
-import { Navbar, Sidebar, HomeCard } from "../components"
+import { Navbar, Sidebar, HomeCard , NoSavedVideosCard} from "../components"
 import { useSavedVideos } from "../context/SavedVideosContext"
+
 
 const SavedVideos = () => {
   const { savedVideos } = useSavedVideos();
@@ -11,9 +12,9 @@ const SavedVideos = () => {
         <Sidebar />
         <div className="dark:bg-[#0f0f0f] ml-0 md:ml-[250px] flex-1 min-h-screen p-4 dark:text-white bg-[#f9f9f9]">
           {savedVideos.length === 0 ? (
-        <p className="text-gray-600">No videos saved yet.</p>
+         <NoSavedVideosCard />
       ) : (
-        <div className="grid grid-cols-1 gap-6">
+        <div className="">
           {savedVideos.map((video) => (
             <HomeCard key={video.videoUrl} videoDetails={video} />
           ))}

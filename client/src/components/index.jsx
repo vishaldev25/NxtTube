@@ -8,7 +8,8 @@ import HomeBanner from "./HomeBanner";
 import HomeCard from "./HomeCard";
 import NoSearchResult from "./NoSearchResult";
 import VideoItemDetailsCard from "./VideoItemDetailsCard";
+import NoSavedVideosCard from "./NoSavedVideosCard";
 
 export {
-    Navbar, Sidebar, VideoItemDetailsCard, GamingCard, NoSearchResult, HomeCard, FailureView, TrendingCard, SearchHome, HomeBanner
+    Navbar, Sidebar, NoSavedVideosCard, VideoItemDetailsCard, GamingCard, NoSearchResult, HomeCard, FailureView, TrendingCard, SearchHome, HomeBanner
 }
