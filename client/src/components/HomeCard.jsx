@@ -13,7 +13,8 @@ const HomeCard = ({ videoDetails }) => {
             <img
                 src={thumbnailUrl}
                 alt="thumbnail"     
-                className="w-full h-48 object-fit sm:h-56 md:h-64 lg:h-48"
+          className="w-full h-48 object-fit sm:h-56 md:h-64 lg:h-48"
+          loading="lazy"
             />
           </Link>
         <div className="flex flex-col items-start p-4 space-x-4 space-y-2">
@@ -21,7 +22,8 @@ const HomeCard = ({ videoDetails }) => {
             <img
               src={imageUrl}
               alt="channel"
-              className="w-12 h-12 mr-3 rounded-full"
+            className="w-12 h-12 mr-3 rounded-full"
+            loading="lazy"
             />
             <h2 className="text-lg font-semibold line-clamp-2 min-h-[3.25rem] ">{title}</h2>
           </div>
