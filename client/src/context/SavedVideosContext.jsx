@@ -1,10 +1,17 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext, useEffect } from 'react';
 
 const SavedVideosContext = createContext();
 
 export const SavedVideosProvider = ({children}) => {
-    const [savedVideos, setSavedVideos] = useState([]);
+    const [savedVideos, setSavedVideos] = useState(() => {
+        const storedVideos = localStorage.getItem('savedVideos');
+        return storedVideos ? JSON.parse(storedVideos) : [];
+    });
 
+    useEffect(() => {
+        localStorage.setItem('savedVideos', JSON.stringify(savedVideos))
+    }, [savedVideos]);
+    
     const toggleSaveVideo = (video) => {
         setSavedVideos((prev) => {
             const isAlreadySaved = prev.some((vid) => vid.videoUrl === video.videoUrl);
