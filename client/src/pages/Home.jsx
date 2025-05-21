@@ -12,7 +12,7 @@ const apiConstantsStatus = {
 }
 
 const Home = () => {
-
+  const [bannerClosed, setBannerClosed] = useState(false)
   const [apiStatus, setApiStatus] = useState(apiConstantsStatus.initial)
   const [searchItem, setSearchItem] = useState('')
   const [homeVideosList, setHomeVideosList] = useState([])
@@ -65,9 +65,9 @@ const Home = () => {
       <div className="flex w-full pt-16 h-min-screen">
         <Sidebar />
         <div className="dark:bg-[#0f0f0f] ml-0 md:ml-[250px] flex-1 min-h-screen p-4 dark:text-white bg-[#f9f9f9]">
-          <HomeBanner />
-          <SearchHome searchItem={searchItem} setSearchItem={setSearchItem} />
+          {!bannerClosed && <HomeBanner onClose={()=> setBannerClosed(true)} />}
           
+          <SearchHome searchItem={searchItem} setSearchItem={setSearchItem} />
           {apiStatus === apiConstantsStatus.inProgress && (
             <div className="flex items-center justify-center w-full min-h-screen">
               <TailSpin color="#00BFFF" height={30} width={30} />
