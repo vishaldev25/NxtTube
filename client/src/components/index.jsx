@@ -6,7 +6,8 @@ import TrendingCard from "./TrendingCard";
 import SearchHome from "./SearchHome";
 import HomeBanner from "./HomeBanner";
 import HomeCard from "./HomeCard";
+import NoSearchResult from "./NoSearchResult";
 
 export {
-    Navbar, Sidebar, GamingCard, HomeCard, FailureView, TrendingCard, SearchHome, HomeBanner
+    Navbar, Sidebar, GamingCard, NoSearchResult, HomeCard, FailureView, TrendingCard, SearchHome, HomeBanner
 }

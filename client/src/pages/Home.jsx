@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react"
-import { Navbar, Sidebar, SearchHome, HomeBanner, HomeCard, FailureView } from "../components"
+import {
+  Navbar, NoSearchResult,
+  Sidebar, SearchHome, HomeBanner, HomeCard, FailureView
+} from "../components"
 import Cookies from "js-cookie"
 import { TailSpin } from "react-loader-spinner"
 import { formatDistanceToNow } from "date-fns"
@@ -58,6 +61,10 @@ const Home = () => {
     }, 100)
     return () => clearTimeout(timeoutId);
   }, [searchItem])
+
+  const handleRetry = () => {
+    setSearchItem("")
+  }
   
   return (
     <>
@@ -77,12 +84,18 @@ const Home = () => {
           )}
           {
             apiStatus === apiConstantsStatus.success && (
-              <ul className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
-                {homeVideosList.map(video => {
-                  return <HomeCard key={video.id} videoDetails={video} />
-                })}
-              </ul>
-            )
+              <>
+                {homeVideosList.length === 0 ? (
+                    <NoSearchResult onRetry ={handleRetry}/>
+                ) : (
+                  <ul className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
+                    {homeVideosList.map(video => {
+                      return <HomeCard key={video.id} videoDetails={video} />
+                    })}
+                  </ul>  
+                )}
+            </> 
+          )
           }
           {
             apiStatus === apiConstantsStatus.failure && (
