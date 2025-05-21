@@ -106,6 +106,7 @@ const Login = () => {
     <div className="dark:bg-[#231f20] bg-white  dark:text-white min-h-screen flex justify-center items-center">
       <div className="flex items-center justify-center max-w-lg p-6 mx-4 border-2 border-gray-300 rounded-lg shadow-lg dark:border-gray-600">
         <form
+          id="Form"
           onSubmit={submitForm}
           className="flex flex-col gap-4">
           <img src={logoSrc} alt="logo" className="mx-auto mb-6 sm:w-[150px] md:w-[275px]" />
