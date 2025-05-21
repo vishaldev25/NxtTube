@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ReactPlayer from "react-player"
 import {AiOutlineLike, AiOutlineDislike} from 'react-icons/ai'
-import {FaSave} from 'react-icons/fa'
+import { FaSave } from 'react-icons/fa'
+import { useSavedVideos } from "../context/SavedVideosContext"
 
 const VideoItemDetailsCard = ({ videoDetails }) => {
     const {
@@ -10,10 +11,17 @@ const VideoItemDetailsCard = ({ videoDetails }) => {
     
     const formatedDate = publishedAt.replace(/^(over|about|almost)\s/, '')
 
+    const { toggleSaveVideo, savedVideos } = useSavedVideos();
     const [isLiked, setIsLiked] = useState(false);
     const [isUnliked, setIsUnliked] = useState(false);
     const [isSaved, setIsSaved] = useState(false);
     
+    useEffect(() => {
+        const isAlreadySaved = savedVideos.some((vid) => vid.videoUrl === videoUrl);
+        setIsSaved(isAlreadySaved)
+     },[savedVideos, videoUrl])
+
+
     const like = isLiked ? "Liked" : "Like";
     const unlike = isUnliked ? "Disliked" : "Dislike";
     const saved = isSaved ? "Saved" : "Save"
@@ -29,7 +37,8 @@ const VideoItemDetailsCard = ({ videoDetails }) => {
     }
 
     const handleSave = () => {
-        setIsSaved((prev)=>!prev)
+        setIsSaved((prev) => !prev)
+        toggleSaveVideo(videoDetails)
     }
   return (
       <div className="min-h-screen">

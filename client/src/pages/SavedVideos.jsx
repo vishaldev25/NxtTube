@@ -1,13 +1,24 @@
-import { Navbar, Sidebar } from "../components"
+import { Navbar, Sidebar, HomeCard } from "../components"
+import { useSavedVideos } from "../context/SavedVideosContext"
 
 const SavedVideos = () => {
+  const { savedVideos } = useSavedVideos();
+  
   return (
     <>
       <Navbar />
       <div className="flex w-full pt-16 h-min-screen">
         <Sidebar />
         <div className="dark:bg-[#0f0f0f] ml-0 md:ml-[250px] flex-1 min-h-screen p-4 dark:text-white bg-[#f9f9f9]">
-          Saved Videos
+          {savedVideos.length === 0 ? (
+        <p className="text-gray-600">No videos saved yet.</p>
+      ) : (
+        <div className="grid grid-cols-1 gap-6">
+          {savedVideos.map((video) => (
+            <HomeCard key={video.videoUrl} videoDetails={video} />
+          ))}
+        </div>
+      )}
         </div>
       </div>
     </>
