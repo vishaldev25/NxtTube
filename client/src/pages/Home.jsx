@@ -4,7 +4,7 @@ import {
   Sidebar, SearchHome, HomeBanner, HomeCard, FailureView
 } from "../components"
 import Cookies from "js-cookie"
-import { TailSpin } from "react-loader-spinner"
+import { BeatLoader} from 'react-spinners';
 import { formatDistanceToNow } from "date-fns"
 
 const apiConstantsStatus = {
@@ -79,7 +79,7 @@ const Home = () => {
           
           {apiStatus === apiConstantsStatus.inProgress && (
             <div className="flex items-center justify-center w-full min-h-screen">
-              <TailSpin color="#00BFFF" height={30} width={30} />
+              <BeatLoader color="#00BFFF" height={30} width={30} />
             </div>
           )}
           {
