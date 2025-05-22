@@ -41,63 +41,65 @@ const VideoItemDetailsCard = ({ videoDetails }) => {
         toggleSaveVideo(videoDetails)
     }
   return (
-      <div className="min-h-screen">
-          <div className="">
-              <ReactPlayer 
-                url={videoUrl} controls 
+      <div className="min-h-screen p-1 md:p-5">
+          <div className="w-full gap-3 mb-4">
+              <ReactPlayer
+                  url={videoUrl}
+                  controls
+                  width="100%"
               />
           </div>
-          
-          <h2>{title}</h2>
+          <h2 className="text-xl font-bold md:text-2xl">{title}</h2>
 
-          <div className="flex gap-4">
-              <p><span>{viewCount}</span> Views</p>
-              <p>{formatedDate }</p>
+          <div className="flex gap-4 mt-3 mb-2">
+              <p><span className="mr-1 font-bold text-red-500 text-md">{viewCount}</span> Views</p>
+              <p className="font-medium">{formatedDate }</p>
           </div>
 
-          <div className="flex gap-4">
-              <div>
+          <div className="flex items-center gap-4 mb-5">
+              <div className="flex">
                   <button
                       onClick={handleLike}
                   >
-                      <span className="flex">
-                          <AiOutlineLike />
+                      <span className={`flex text-md font-normal items-center ${isLiked ? 'text-blue-600 font-semibold text-lg': ''} transition`}>
+                          <AiOutlineLike size={25} className="mr-1" />
                           {like}
                       </span>
                         
                   </button>
               </div>
             
-              <div>
+              <div className="flex">
                   <button onClick={handleDislike}>
-                      <span className="flex">
-                          <AiOutlineDislike />
+                      <span className={`flex text-md font-normal items-center ${isUnliked ? 'text-red-400 font-semibold text-lg': ''} transition`}>
+                          <AiOutlineDislike size={25} className="mr-1" />
                           {unlike}
                       </span>
                       
                   </button>
               </div>
 
-              <div>
+              <div className="flex">
                   <button onClick={handleSave} >
-                      <span className="flex">
-                          <FaSave />
+                      <span className={`flex text-md font-normal items-center ${isSaved ? 'text-green-600 font-semibold text-lg': ''} transition`}>
+                          <FaSave size={25} className="mr-1" />
                           {saved}
                       </span>
                   </button>
               </div>
           </div>
-          <hr className="text-red-500 border-t" />
+          
+          <hr className="h-1 bg-yellow-300 border-0" />
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 mt-5 mb-4">
               <img 
                   src={imageUrl}
                   alt="thumbanail"
-                  className="w-10 h-10"
+                  className="w-12 h-12"
               />
               <div>
-                  <p>{name}</p>
-                  <p>{subscribers} subscribers</p>
+                  <p className="text-xl">{name}</p>
+                  <p className="font-normal text-md">{subscribers} subscribers</p>
               </div>
           </div>
           <div>
