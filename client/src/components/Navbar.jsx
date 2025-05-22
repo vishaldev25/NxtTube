@@ -101,6 +101,11 @@ const Navbar = () => {
           <div className="block md:hidden">
             <Popup
               modal
+              overlayStyle={{
+                background: 'rgba(0, 0, 0, 0.4)', // semi-transparent dark background
+                backdropFilter: 'blur(5px)', // apply blur
+                WebkitBackdropFilter: 'blur(4px)',
+              }}
               trigger={
                 <button className="block md:hidden ">
                   <FiLogOut size="20" className="font-extrabold" />
@@ -134,6 +139,11 @@ const Navbar = () => {
           <div className="justify-center hidden md:flex">
             <Popup
               modal
+              overlayStyle={{
+                background: 'rgba(0, 0, 0, 0.4)', // semi-transparent dark background
+                backdropFilter: 'blur(5px)', // apply blur
+                WebkitBackdropFilter: 'blur(4px)',
+              }}
               trigger={
                 <button className="hidden md:inline-block px-4 py-1 text-sm font-serif font-semibold rounded shadow-md dark:bg-transparent text-[#4f46e5] border-2 border-[#4f46e5] dark:text-white dark:border-white">
                   Logout
@@ -141,7 +151,7 @@ const Navbar = () => {
               }
             >
               {(close) => (
-                <div className="p-8  sm:hidden md:flex flex-col  justify-center rounded shadow-md bg-[#f1f5f9] dark:bg-[#231f20] dark:text-white">
+                <div className="p-8 sm:hidden md:flex flex-col  justify-center rounded shadow-md bg-[#f1f5f9] dark:bg-[#231f20] dark:text-white">
                   <h2 className="pb-4 text-[#00306e] font-semibold font-serif text-md dark:text-white">Are you sure you want to Logout?</h2>
                   <div className="flex items-center justify-evenly">
                     <button
