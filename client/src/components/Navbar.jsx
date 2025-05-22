@@ -118,14 +118,14 @@ const Navbar = () => {
                   <div className="flex items-center justify-evenly">
                     <button
                       onClick={()=> close()}
-                      className="px-4 py-2 rounded border dark:text-[#cbd5e1] shadow-md border-[#383838] dark:border-[#cbd5e1] text-[#424242] font-normal"
+                      className="px-4 py-2 transition-transform duration-300 transform hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-xl rounded border dark:text-[#cbd5e1] shadow-md border-[#383838] dark:border-[#cbd5e1] text-[#424242] font-normal hover"
                     >
                       Cancel
                     </button>
                     <button
                       type="button"
                       onClick={onClickLogout}
-                      className="bg-[#3b82f6] font-normal text-white px-4 py-2 rounded shadow-md"
+                      className="bg-[#3b82f6] font-normal transition-transform duration-300 transform hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-xl text-white px-4 py-2 rounded shadow-md"
                     >
                       Confirm
                     </button>
@@ -157,14 +157,14 @@ const Navbar = () => {
                     <button
                       type="button"
                       onClick={()=> close()}
-                      className="px-4 py-2 rounded border dark:text-[#cbd5e1] shadow-md border-[#383838] dark:border-[#cbd5e1] text-[#424242] font-normal"
+                      className="px-4  transition-transform duration-300 transform hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-xl py-2 rounded border dark:text-[#cbd5e1] shadow-md border-[#383838] dark:border-[#cbd5e1] text-[#424242] font-normal"
                     >
                       Cancel
                     </button>
                     <button
                       type="button"
                       onClick={onClickLogout}
-                      className="bg-[#3b82f6] font-normal text-white px-4 py-2 rounded shadow-md"
+                      className="bg-[#3b82f6] transition-transform duration-300 transform hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-xl font-normal text-white px-4 py-2 rounded shadow-md"
                     >
                       Confirm
                     </button>
