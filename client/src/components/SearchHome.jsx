@@ -7,7 +7,9 @@ const SearchHome = ({ searchItem, setSearchItem }) => {
   
   return (
     <div className="flex items-center min-w-full px-4 border-2 border-red-500 rounded-lg">
+      <label htmlFor='video-search' />
       <input 
+        id="video-search"
         type="search"
         value={searchItem}
         placeholder="Search Vidoes.."
